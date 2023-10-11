@@ -22,24 +22,34 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-          onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
-          currentIndex: _selectedIndex,
-          showUnselectedLabels: false,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_bag),
-              label: "Cart",
-            ),
-          ]),
+      bottomNavigationBar: SizedBox(
+        height: 70,
+        child: BottomNavigationBar(
+            backgroundColor: Colors.black,
+            onTap: (index) {
+              setState(() {
+                _selectedIndex = index;
+              });
+            },
+            currentIndex: _selectedIndex,
+            showUnselectedLabels: false,
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home_rounded,
+                  size: 30,
+                ),
+                label: "Home",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.shopping_bag_rounded,
+                  size: 30,
+                ),
+                label: "Cart",
+              ),
+            ]),
+      ),
       body: _pages[_selectedIndex],
     );
   }

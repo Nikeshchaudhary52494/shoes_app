@@ -6,7 +6,7 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Text("this is cart page"),
+      body: Center(child: Text("this is cart page")),
     );
   }
 }
